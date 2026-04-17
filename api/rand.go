@@ -26,15 +26,6 @@ func generatePassword(length int) (string, error) {
 }
 
 func RandHandler(w http.ResponseWriter, r *http.Request) {
-	reqID := FromRequest(r)
-	w.Header().Set("X-Request-Id", reqID)
-
-	w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
-	w.Header().Set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
-	w.Header().Set("Pragma", "no-cache")
-	w.Header().Set("Expires", "0")
-	w.Header().Set("X-Content-Type-Options", "nosniff")
-
 	length := 40
 	if l := r.URL.Query().Get("length"); l != "" {
 		if parsed, err := strconv.Atoi(l); err == nil && parsed > 0 && parsed <= 1024 {
@@ -48,6 +39,5 @@ func RandHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
-	_, _ = w.Write([]byte(password + "\n"))
+	writeTextResponse(w, r, password)
 }

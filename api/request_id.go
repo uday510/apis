@@ -28,4 +28,4 @@ func FromRequest(r *http.Request) string {
 	return generateRequestID()
 }
 
-func DummyHandler(w http.ResponseWriter, r *http.Request) {}
+func DummyRequestHandler(w http.ResponseWriter, r *http.Request) {}
