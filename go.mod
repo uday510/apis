@@ -1,3 +1,3 @@
-module go-rand-api
+module apis
 
 go 1.25

@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"go-rand-api/internal"
+	"apis/internal"
 	"net"
 	"net/http"
 	"strings"

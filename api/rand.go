@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"apis/internal"
 	"crypto/rand"
-	"go-rand-api/internal"
 	"math/big"
 	"net/http"
 	"strconv"
