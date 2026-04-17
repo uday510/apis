@@ -19,3 +19,5 @@ func writeTextResponse(w http.ResponseWriter, r *http.Request, body string) {
 	w.WriteHeader(http.StatusOK)
 	_, _ = w.Write([]byte(body + "\n"))
 }
+
+func DummyResponseHandler(w http.ResponseWriter, r *http.Request) {}
